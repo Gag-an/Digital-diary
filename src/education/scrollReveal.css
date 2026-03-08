@@ -1,0 +1,30 @@
+/* ScrollFloat wrapper — INLINE, not block */
+.scroll-float {
+  display: inline-block;
+  overflow: hidden;
+}
+
+/* animated text inherits heading size */
+.scroll-float-text {
+  display: inline-block;
+  line-height: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* white text */
+.academic {
+  color: #ffffff;
+}
+
+/* animated word */
+.foundation {
+  color: #ec4899;
+  font-style: italic;
+}
+
+/* GSAP targets */
+.char {
+  display: inline-block;
+  will-change: transform, opacity;
+}

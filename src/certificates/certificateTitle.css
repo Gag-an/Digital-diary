@@ -1,0 +1,21 @@
+.certificate-title-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+    margin-top:120px;
+    margin-bottom:80px;
+  }
+  
+  .certificate-title{
+    font-size:72px;
+    font-weight:700;
+    color:#e6e6e6;
+    letter-spacing:-0.03em;
+  }
+  
+  /* pink word */
+  
+  .pink-word .variable-proximity span{
+    color:#ec4899;
+  }

@@ -1,0 +1,17 @@
+.logo-container {
+  display: inline-block;
+  position: relative;
+  background-color: transparent;
+  /* padding: 4px; */
+  padding-left: 7px;
+  z-index: 100;
+}
+
+.logo-image {
+  height: 50px;
+  width: auto;
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+

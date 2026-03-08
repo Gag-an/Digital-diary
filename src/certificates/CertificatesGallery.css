@@ -1,0 +1,21 @@
+.certificate-viewer{
+    display:flex;
+    justify-content:center;
+    margin-top:60px;
+    }
+    
+    .view-cert-btn{
+    padding:14px 36px;
+    font-size:16px;
+    font-weight:600;
+    color:white;
+    text-decoration:none;
+    background:#ec4899;
+    border-radius:40px;
+    transition:all 0.3s ease;
+    }
+    
+    .view-cert-btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 25px rgba(236,72,153,0.4);
+    }
