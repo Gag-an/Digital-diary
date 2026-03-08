@@ -1,17 +1,43 @@
-# React + Vite
+# Digital Diary Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + Vite portfolio with an interactive guestbook backed by Supabase (PostgreSQL).
 
-## Guestbook Backend (Supabase)
+## Features
 
-This project uses Supabase Postgres for guestbook persistence.
+- Modern portfolio UI
+- Section-based navigation with `More` dropdown
+- Resume button in navbar
+- Guestbook page with persistent messages (database-backed)
+- Netlify-ready deployment config
 
-1. Create a Supabase project.
-2. Open SQL Editor and run [sql/guestbook.sql](./sql/guestbook.sql).
-3. Copy [.env.example](./.env.example) to `.env` and fill:
-   - `VITE_SUPABASE_URL`
-   - `VITE_SUPABASE_ANON_KEY`
-4. Run `npm run dev` locally.
-5. On Netlify, set the same env vars in Site settings -> Environment variables.
+## Tech Stack
 
-Guestbook page reads/writes from table `public.guestbook_messages`.
+- React 19
+- Vite
+- Supabase (`@supabase/supabase-js`)
+- CSS
+
+## Project Structure
+
+- `src/` - frontend source code
+- `src/guestbook/GuestbookPage.jsx` - guestbook UI + data operations
+- `src/lib/supabaseClient.js` - Supabase client setup
+- `sql/guestbook.sql` - SQL schema + policies
+- `netlify.toml` - Netlify build + SPA redirect config
+
+## Guestbook Backend Setup (Supabase)
+
+1. Create a project in Supabase.
+2. Open **SQL Editor** and run the SQL from:
+   - `sql/guestbook.sql`
+3. Go to **Project Settings -> API** and copy:
+   - Project URL
+   - Publishable key (anon/public)
+
+## Environment Variables
+
+Create `.env` in project root:
+
+```env
+VITE_SUPABASE_URL=https://YOUR_PROJECT_REF.supabase.co
+VITE_SUPABASE_ANON_KEY=YOUR_PUBLISHABLE_KEY
