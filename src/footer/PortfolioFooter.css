@@ -1,0 +1,128 @@
+.portfolio-footer {
+  margin-top: 72px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  background: rgba(5, 7, 12, 0.88);
+  overflow: hidden;
+}
+
+.portfolio-footer__grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 0;
+}
+
+.portfolio-footer__author,
+.portfolio-footer__col {
+  padding: 34px 28px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.portfolio-footer__col:last-child {
+  border-right: none;
+}
+
+.portfolio-footer__logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+.portfolio-footer__author p {
+  max-width: 320px;
+  color: rgba(229, 231, 235, 0.84);
+  line-height: 1.45;
+  margin-bottom: 22px;
+}
+
+.guestbook-card {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 16px 54px 16px 16px;
+  background: linear-gradient(145deg, rgba(84, 36, 140, 0.4), rgba(10, 16, 38, 0.72));
+}
+
+.guestbook-card__tag {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  color: rgba(203, 213, 225, 0.9);
+  margin-bottom: 8px;
+}
+
+.guestbook-card__title {
+  color: #f8fafc;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.guestbook-card__arrow {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+}
+
+.portfolio-footer__col h4 {
+  margin: 0 0 14px;
+  font-size: 0.9rem;
+  color: rgba(161, 161, 170, 0.95);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.portfolio-footer__col a {
+  display: block;
+  color: rgba(244, 244, 245, 0.92);
+  text-decoration: none;
+  font-size: 1.1rem;
+  line-height: 2;
+}
+
+.portfolio-footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(161, 161, 170, 0.95);
+}
+
+.portfolio-footer__bottom div {
+  display: flex;
+  gap: 24px;
+}
+
+.portfolio-footer__bottom a {
+  color: rgba(229, 231, 235, 0.9);
+  text-decoration: none;
+}
+
+@media (max-width: 980px) {
+  .portfolio-footer__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-footer__author,
+  .portfolio-footer__col {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .portfolio-footer__bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

@@ -25,7 +25,7 @@ uniform vec2 uMouse;
 
 #define PI 3.1415926538
 
-const int u_line_count = 40;
+const int u_line_count = 28;
 const float u_line_width = 7.0;
 const float u_line_blur = 10.0;
 
@@ -125,6 +125,7 @@ const Threads = ({
   amplitude = 1,
   distance = 0,
   enableMouseInteraction = false,
+  pixelRatio = 1,
   ...rest
 }) => {
   const containerRef = useRef(null);
@@ -136,7 +137,8 @@ const Threads = ({
     }
 
     const container = containerRef.current;
-    const renderer = new Renderer({ alpha: true });
+    const dpr = Math.min(window.devicePixelRatio || 1, pixelRatio);
+    const renderer = new Renderer({ alpha: true, dpr });
     const gl = renderer.gl;
 
     gl.clearColor(0, 0, 0, 0);
@@ -193,6 +195,33 @@ const Threads = ({
       container.addEventListener("mouseleave", handleMouseLeave);
     }
 
+    let isInView = true;
+    let isDocumentVisible = !document.hidden;
+    let hasStarted = false;
+
+    const start = () => {
+      if (!hasStarted) {
+        hasStarted = true;
+        animationFrameId.current = requestAnimationFrame(update);
+      }
+    };
+
+    const stop = () => {
+      if (hasStarted && animationFrameId.current) {
+        cancelAnimationFrame(animationFrameId.current);
+        animationFrameId.current = null;
+      }
+      hasStarted = false;
+    };
+
+    const toggleRender = () => {
+      if (isInView && isDocumentVisible) {
+        start();
+      } else {
+        stop();
+      }
+    };
+
     function update(t) {
       if (enableMouseInteraction) {
         const smoothing = 0.05;
@@ -210,14 +239,29 @@ const Threads = ({
       animationFrameId.current = requestAnimationFrame(update);
     }
 
-    animationFrameId.current = requestAnimationFrame(update);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isInView = entry?.isIntersecting ?? true;
+        toggleRender();
+      },
+      { threshold: 0.01 }
+    );
+    observer.observe(container);
+
+    const handleVisibilityChange = () => {
+      isDocumentVisible = !document.hidden;
+      toggleRender();
+    };
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    toggleRender();
 
     return () => {
-      if (animationFrameId.current) {
-        cancelAnimationFrame(animationFrameId.current);
-      }
+      stop();
+      observer.disconnect();
 
       window.removeEventListener("resize", resize);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
 
       if (enableMouseInteraction) {
         container.removeEventListener("mousemove", handleMouseMove);
@@ -230,7 +274,7 @@ const Threads = ({
 
       gl.getExtension("WEBGL_lose_context")?.loseContext();
     };
-  }, [color, amplitude, distance, enableMouseInteraction]);
+  }, [color, amplitude, distance, enableMouseInteraction, pixelRatio]);
 
   return <div ref={containerRef} className="threads-container" {...rest} />;
 };

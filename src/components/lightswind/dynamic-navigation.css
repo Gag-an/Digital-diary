@@ -44,6 +44,11 @@
   white-space: nowrap;
 }
 
+.nav-link-button {
+  border: none;
+  background: transparent;
+}
+
 .nav-link:hover {
   color: rgba(255, 255, 255, 0.9);
   background: rgba(255, 255, 255, 0.03);
@@ -65,24 +70,57 @@
   background: rgba(255, 255, 255, 0.95);
   border-radius: 1px;
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.9),
-              0 0 24px rgba(255, 255, 255, 0.6),
-              0 0 36px rgba(255, 255, 255, 0.3);
+    0 0 24px rgba(255, 255, 255, 0.6),
+    0 0 36px rgba(255, 255, 255, 0.3);
   animation: glow-pulse 2s ease-in-out infinite;
 }
 
 @keyframes glow-pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.85;
     box-shadow: 0 0 12px rgba(255, 255, 255, 0.9),
-                0 0 24px rgba(255, 255, 255, 0.6),
-                0 0 36px rgba(255, 255, 255, 0.3);
+      0 0 24px rgba(255, 255, 255, 0.6),
+      0 0 36px rgba(255, 255, 255, 0.3);
   }
+
   50% {
     opacity: 1;
     box-shadow: 0 0 16px rgba(255, 255, 255, 1),
-                0 0 32px rgba(255, 255, 255, 0.8),
-                0 0 48px rgba(255, 255, 255, 0.5);
+      0 0 32px rgba(255, 255, 255, 0.8),
+      0 0 48px rgba(255, 255, 255, 0.5);
   }
+}
+
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 170px;
+  padding: 8px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(20, 20, 20, 0.95);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  display: grid;
+  gap: 6px;
+}
+
+.nav-dropdown-item {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 13px;
+}
+
+.nav-dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 1);
 }
 
 .nav-dropdown-icon {
@@ -126,4 +164,3 @@
 .nav-label {
   white-space: nowrap;
 }
-

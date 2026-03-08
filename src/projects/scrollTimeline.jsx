@@ -25,7 +25,8 @@ export function ScrollTimeline({ events = [] }) {
 
   useEffect(() => {
     return scrollYProgress.onChange((v) => {
-      setActiveIndex(Math.floor(v * events.length));
+      const nextIndex = Math.floor(v * events.length);
+      setActiveIndex((prev) => (prev === nextIndex ? prev : nextIndex));
     });
   }, [scrollYProgress, events.length]);
 
@@ -106,3 +107,5 @@ export function ScrollTimeline({ events = [] }) {
     </section>
   );
 }
+
+

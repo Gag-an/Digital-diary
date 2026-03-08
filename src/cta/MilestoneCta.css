@@ -1,0 +1,347 @@
+.milestone-cta {
+  margin: 5rem auto 4rem;
+  width: min(1220px, 95vw);
+}
+
+.milestone-browser {
+  width: 100%;
+  min-height: 640px;
+  background: #111;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(112, 130, 190, 0.28);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+}
+
+.tabs-head {
+  background-color: #353535;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding-left: 20px;
+}
+
+.tabs-head .tab-open {
+  width: 120px;
+  height: 34px;
+  border-radius: 7px 7px 0 0;
+  background-color: #515151;
+  display: flex;
+  gap: 5px;
+  align-items: start;
+  justify-content: space-between;
+  padding: 6px 8px;
+  position: relative;
+}
+
+.tabs-head .tab-open .close-tab {
+  color: #fff;
+  font-size: 9px;
+  padding: 1px 4px;
+  border-radius: 50%;
+  cursor: default;
+}
+
+.tabs-head .tab-open .close-tab:hover {
+  background-color: #5d5d5d;
+}
+
+.tabs-head .tab-open .rounded-l {
+  position: absolute;
+  background-color: #515151;
+  width: 20px;
+  height: 24px;
+  top: 0;
+  right: 0;
+  transform: translate(100%);
+  overflow: hidden;
+}
+
+.tabs-head .tab-open .rounded-l .mask-round {
+  width: 100%;
+  height: 100%;
+  background-color: #353535;
+  border-radius: 0 0 0 7px;
+}
+
+.tabs-head .tab-open .rounded-r {
+  position: absolute;
+  background-color: #515151;
+  width: 20px;
+  height: 24px;
+  top: 0;
+  left: 0;
+  transform: translate(-100%);
+  overflow: hidden;
+}
+
+.tabs-head .tab-open .rounded-r .mask-round {
+  width: 100%;
+  height: 100%;
+  background-color: #353535;
+  border-radius: 0 0 7px 0;
+}
+
+.tabs-head .tab-open span {
+  color: #fff;
+  font-size: 10px;
+}
+
+.tabs-head .window-opt {
+  display: flex;
+}
+
+.tabs-head .window-opt button {
+  height: 30px;
+  width: 30px;
+  border: none;
+  background-color: transparent;
+  transition: 0.1s ease-out;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.tabs-head .window-opt button:hover {
+  background-color: #515151c8;
+}
+
+.tabs-head .window-opt .window-close:hover {
+  background-color: rgb(255, 52, 52);
+}
+
+.head-browser {
+  width: 100%;
+  height: 40px;
+  background-color: #515151;
+  padding: 7px;
+  display: flex;
+  gap: 5px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.head-browser input {
+  background-color: #3b3b3b;
+  border: 2px solid transparent;
+  height: 100%;
+  border-radius: 20px;
+  outline: none;
+  color: #fff;
+  padding: 0 15px;
+  flex: 1;
+  transition: 0.2s ease-in-out;
+}
+
+.head-browser input::placeholder {
+  color: #fff;
+}
+
+.head-browser button {
+  width: 27px;
+  height: 25px;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  border-radius: 50%;
+  transition: 0.2s ease-in-out;
+}
+
+.head-browser button:disabled {
+  opacity: 0.4;
+}
+
+.head-browser button:hover {
+  background-color: #5d5d5d;
+}
+
+.head-browser button:disabled:hover {
+  background-color: transparent;
+}
+
+.head-browser .star {
+  font-size: 14px;
+  opacity: 0.75;
+}
+
+.milestone-cta__surface {
+  position: relative;
+  flex: 1;
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 82%, rgba(124, 194, 255, 0.55) 0%, rgba(124, 194, 255, 0) 35%),
+    radial-gradient(circle at 85% 18%, rgba(118, 194, 255, 0.45) 0%, rgba(118, 194, 255, 0) 30%),
+    radial-gradient(circle at 50% 50%, rgba(4, 7, 20, 0.95) 0%, #05070f 70%, #020308 100%);
+}
+
+.milestone-cta__noise {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.24;
+  background-image: radial-gradient(rgba(180, 220, 255, 0.7) 0.6px, transparent 0.6px);
+  background-size: 3px 3px;
+  mix-blend-mode: screen;
+}
+
+.milestone-cta__inner {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 4rem;
+  text-align: center;
+}
+
+.milestone-cta__crest {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 1.75rem;
+  border-radius: 50%;
+  border: 1px solid rgba(72, 119, 255, 0.8);
+  background: radial-gradient(circle at 35% 35%, rgba(45, 83, 212, 0.8), rgba(11, 21, 62, 0.95));
+  box-shadow: 0 0 0 10px rgba(38, 74, 195, 0.14), 0 0 42px rgba(55, 106, 255, 0.28);
+  display: grid;
+  place-items: center;
+}
+
+.milestone-cta__logo {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.milestone-cta__title {
+  margin: 0;
+  font-size: clamp(2rem, 4.6vw, 4.4rem);
+  line-height: 1.08;
+  letter-spacing: 0.02em;
+  color: #f4f7ff;
+  text-transform: uppercase;
+}
+
+.milestone-cta__title strong {
+  font-weight: 800;
+}
+
+.animated-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 2rem;
+  padding: 16px 36px;
+  border: 4px solid transparent;
+  font-size: 1.18rem;
+  background-color: rgba(245, 249, 255, 0.96);
+  border-radius: 100px;
+  font-weight: 700;
+  color: #1f387e;
+  box-shadow: 0 0 0 2px #ffffff;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button svg {
+  position: absolute;
+  width: 24px;
+  fill: #1f387e;
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .arr-1 {
+  right: 16px;
+}
+
+.animated-button .arr-2 {
+  left: -25%;
+}
+
+.animated-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #c5e5e4;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .text {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-12px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button:hover {
+  box-shadow: 0 0 0 12px transparent;
+  color: #212121;
+  border-radius: 12px;
+}
+
+.animated-button:hover .arr-1 {
+  right: -25%;
+}
+
+.animated-button:hover .arr-2 {
+  left: 16px;
+}
+
+.animated-button:hover .text {
+  transform: translateX(12px);
+}
+
+.animated-button:hover svg {
+  fill: #1f387e;
+}
+
+.animated-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 0 4px #adff2f;
+}
+
+.animated-button:hover .circle {
+  width: 220px;
+  height: 220px;
+  opacity: 1;
+}
+
+.milestone-cta__lead {
+  margin: 2.4rem 0 0;
+  font-size: clamp(1.2rem, 2.3vw, 2rem);
+  font-weight: 700;
+  color: #f0f5ff;
+}
+
+.milestone-cta__sub {
+  margin: 1rem auto 0;
+  max-width: 740px;
+  font-size: clamp(1rem, 1.5vw, 1.45rem);
+  line-height: 1.5;
+  color: rgba(220, 229, 255, 0.75);
+}
+
+@media (max-width: 900px) {
+  .milestone-cta {
+    margin: 3.5rem auto;
+  }
+
+  .milestone-browser {
+    min-height: 560px;
+  }
+
+  .animated-button {
+    font-size: 1.05rem;
+    padding: 13px 30px;
+  }
+}

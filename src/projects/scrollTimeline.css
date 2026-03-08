@@ -3,7 +3,7 @@
     max-width: 1300px;
     margin: 0 auto;
     padding: 8rem 1rem;
-    background: black;
+    background: transparent;
   }
   
   /* Center line */
@@ -55,7 +55,7 @@
     left: 50%;
     width: 18px;
     height: 18px;
-    background: black;
+    background: transparent;
     border: 3px solid rgba(255, 255, 255, 0.4);
     border-radius: 50%;
     transform: translateX(-50%);
@@ -191,3 +191,4 @@
   };
   
   
+

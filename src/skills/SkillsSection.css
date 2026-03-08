@@ -5,7 +5,7 @@
 .skills-section {
   padding: 8rem 1.5rem;
   text-align: center;
-  background: black;
+  background: transparent;
 }
 
 /* Small label */
@@ -38,9 +38,8 @@
 .skills-grid {
   max-width: 900px;
   margin: 0 auto;
-
   display: grid;
-  grid-template-columns: repeat(7, 72px); /* 7 icons first row */
+  grid-template-columns: repeat(7, 72px);
   justify-content: center;
   gap: 1.4rem;
 }
@@ -52,28 +51,21 @@
 .skill-tile {
   width: 72px;
   height: 72px;
-
   border-radius: 18px;
-
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.14),
     rgba(255, 255, 255, 0.05)
   );
-
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-
   border: 1px solid rgba(255, 255, 255, 0.18);
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.12),
     0 10px 30px rgba(0, 0, 0, 0.45);
-
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -112,57 +104,19 @@
    HOVER GLOW
 ================================ */
 
-.skill-tile.react:hover {
-  box-shadow: 0 0 35px rgba(97, 218, 251, 0.6);
-}
-
-.skill-tile.js:hover {
-  box-shadow: 0 0 35px rgba(247, 223, 30, 0.6);
-}
-
-.skill-tile.java:hover {
-  box-shadow: 0 0 35px rgba(231, 111, 0, 0.6);
-}
-
-.skill-tile.cpp:hover {
-  box-shadow: 0 0 35px rgba(0, 89, 156, 0.6);
-}
-
-.skill-tile.node:hover {
-  box-shadow: 0 0 35px rgba(60, 135, 58, 0.6);
-}
-
-.skill-tile.express:hover {
-  box-shadow: 0 0 35px rgba(255, 255, 255, 0.4);
-}
-
-.skill-tile.sql:hover {
-  box-shadow: 0 0 35px rgba(56, 189, 248, 0.6);
-}
-
-.skill-tile.mysql:hover {
-  box-shadow: 0 0 35px rgba(0, 117, 143, 0.6);
-}
-
-.skill-tile.mongo:hover {
-  box-shadow: 0 0 35px rgba(71, 162, 72, 0.6);
-}
-
-.skill-tile.git:hover {
-  box-shadow: 0 0 35px rgba(240, 80, 50, 0.6);
-}
-
-.skill-tile.github:hover {
-  box-shadow: 0 0 35px rgba(229, 231, 235, 0.45);
-}
-
-.skill-tile.postman:hover {
-  box-shadow: 0 0 35px rgba(255, 108, 55, 0.6);
-}
-
-.skill-tile.figma:hover {
-  box-shadow: 0 0 35px rgba(242, 78, 30, 0.6);
-}
+.skill-tile.react:hover { box-shadow: 0 0 35px rgba(97, 218, 251, 0.6); }
+.skill-tile.js:hover { box-shadow: 0 0 35px rgba(247, 223, 30, 0.6); }
+.skill-tile.java:hover { box-shadow: 0 0 35px rgba(231, 111, 0, 0.6); }
+.skill-tile.cpp:hover { box-shadow: 0 0 35px rgba(0, 89, 156, 0.6); }
+.skill-tile.node:hover { box-shadow: 0 0 35px rgba(60, 135, 58, 0.6); }
+.skill-tile.express:hover { box-shadow: 0 0 35px rgba(255, 255, 255, 0.4); }
+.skill-tile.sql:hover { box-shadow: 0 0 35px rgba(56, 189, 248, 0.6); }
+.skill-tile.mysql:hover { box-shadow: 0 0 35px rgba(0, 117, 143, 0.6); }
+.skill-tile.mongo:hover { box-shadow: 0 0 35px rgba(71, 162, 72, 0.6); }
+.skill-tile.git:hover { box-shadow: 0 0 35px rgba(240, 80, 50, 0.6); }
+.skill-tile.github:hover { box-shadow: 0 0 35px rgba(229, 231, 235, 0.45); }
+.skill-tile.postman:hover { box-shadow: 0 0 35px rgba(255, 108, 55, 0.6); }
+.skill-tile.figma:hover { box-shadow: 0 0 35px rgba(242, 78, 30, 0.6); }
 
 /* ===============================
    MOBILE RESPONSIVE
@@ -172,4 +126,9 @@
   .skills-grid {
     grid-template-columns: repeat(4, 72px);
   }
+
+  .skills-title {
+    font-size: 3rem;
+  }
 }
+

@@ -1,4 +1,5 @@
 import "./App.css";
+import MilestoneCta from "./cta/MilestoneCta.jsx";
 import Navbar from "./navbar/navbar.jsx";
 import Particles from "./components/Particles/Particles.jsx";
 import HeroContent from "./hero/HeroContent.jsx";
@@ -12,10 +13,11 @@ import ScrollVelocityText from "./components/scrollText/ScrollVelocityText.jsx";
 import CertificateTitle from "./certificates/certificateTitle.jsx";
 import "./education/educationTitle.css";
 import CertificatesGallery from "./certificates/CertificatesGallery.jsx";
-import Threads from "./components/Threads/Threads.jsx";
 import AchivementSection from "./achivement/AchivementSection.jsx";
+import Threads from "./components/Threads/Threads.jsx";
+import PortfolioFooter from "./footer/PortfolioFooter.jsx";
 
-function App() {
+function App({ onNavigate = () => {} }) {
   const projects = [
     {
       year: "2024",
@@ -47,7 +49,7 @@ function App() {
   ];
 
   return (
-    <div className="app">
+    <div className="app" id="top">
       <section className="hero">
         <div className="ambient-glow" />
 
@@ -72,9 +74,11 @@ function App() {
         <HeroContent />
       </section>
 
-      <AboutSection />
+      <div id="about">
+        <AboutSection />
+      </div>
 
-      <section className="projects-section">
+      <section className="projects-section" id="projects">
         <h2 className="projects-heading">
           Curated <span>work</span>
         </h2>
@@ -110,7 +114,13 @@ function App() {
       <br></br>
       <br></br>
 
-      <SkillsSection />
+      <div id="skills">
+        <SkillsSection />
+      </div>
+
+      <div style={{ width: "100%", height: "600px", position: "relative" }}>
+        <Threads amplitude={1} distance={0} enableMouseInteraction />
+      </div>
 
       <section className="research-section" id="research">
         <ResearchSection />
@@ -120,15 +130,18 @@ function App() {
       <br></br>
       <br></br>
 
-      <CertificateTitle />
-      <CertificatesGallery />
-
-      <div style={{ width: "100%", height: "600px", position: "relative" }}>
-        <Threads amplitude={1} distance={0} enableMouseInteraction />
+      <div id="certificates">
+        <CertificateTitle />
+        <CertificatesGallery />
       </div>
 
+      <br></br>
+      <br></br>
+
       <AchivementSection />
-      <SkillsSection/>
+      <MilestoneCta />
+
+      <PortfolioFooter onNavigate={onNavigate} />
     </div>
   );
 }

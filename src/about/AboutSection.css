@@ -1,23 +1,7 @@
 .about-section {
   position: relative;
   padding: 140px 6vw 120px;
-  background: #000;
-}
-/* Smooth blend overlay */
-.about-section::before {
-  content: "";
-  position: absolute;
-  top: -160px;
-  left: 0;
-  right: 0;
-  height: 160px;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(0, 0, 0, 0.7) 40%,
-    #000 100%
-  );
-  pointer-events: none;
+  background: transparent;
 }
 
 .about-wrapper {
@@ -46,3 +30,4 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+

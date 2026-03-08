@@ -18,7 +18,6 @@ import { FaJava, FaDatabase } from "react-icons/fa";
 import "./SkillsSection.css";
 
 export default function SkillsSection() {
-
   const skills = [
     { Icon: SiReact, className: "react" },
     { Icon: SiJavascript, className: "js" },
@@ -37,7 +36,6 @@ export default function SkillsSection() {
 
   return (
     <section className="skills-section">
-
       <p className="skills-eyebrow">MY SKILLS</p>
 
       <h2 className="skills-title">
@@ -51,7 +49,6 @@ export default function SkillsSection() {
           </div>
         ))}
       </div>
-
     </section>
   );
 }
