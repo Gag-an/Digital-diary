@@ -39,12 +39,12 @@ function App({ onNavigate = () => {} }) {
     },
     {
       year: "2023",
-      title: "Swasth AI",
-      subtitle: "Healthcare - AI",
+      title: "Weather Widget React",
+      subtitle: "Frontend - Weather App",
       description:
-        "A health-focused AI solution aimed at early diagnosis and data-driven healthcare assistance.",
-      tech: ["Python", "R", "ML Analytics"],
-      github: "https://ieeexplore.ieee.org/document/11280738",
+        "A React weather widget that shows current conditions in a clean, responsive interface.",
+      tech: ["React", "JavaScript", "CSS", "Weather API"],
+      github: "https://github.com/Gag-an/weather-widget-react",
     },
   ];
 
@@ -147,3 +147,4 @@ function App({ onNavigate = () => {} }) {
 }
 
 export default App;
+

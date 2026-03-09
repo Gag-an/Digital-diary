@@ -7,6 +7,10 @@ const EMAIL = 'gagkaur274@gmail.com'
 function HeroContent() {
   const [showToast, setShowToast] = useState(false)
 
+  const handleOpenContactPopup = () => {
+    window.dispatchEvent(new Event('open-contact-modal'))
+  }
+
   const handleCopyEmail = async () => {
     try {
       await navigator.clipboard.writeText(EMAIL)
@@ -29,7 +33,7 @@ function HeroContent() {
 
         {/* INTRO ROW (hello + avatar + role) */}
         <div className="hero-intro-row">
-          <span className="hero-intro-text">Hello, I’m Gagan</span>
+          <span className="hero-intro-text">Hello, I'm Gagan</span>
 
           <div className="hero-avatar">
             <img src={gaganImg} alt="Gagan" />
@@ -40,7 +44,7 @@ function HeroContent() {
 
         {/* ACTION ROW (button + email) */}
         <div className="hero-actions">
-          <button className="hero-cta">Let’s Connect</button>
+          <button className="hero-cta" onClick={handleOpenContactPopup}>Let's Connect</button>
 
           <div className="hero-email" onClick={handleCopyEmail}>
             <svg
@@ -61,7 +65,7 @@ function HeroContent() {
 
       {showToast && (
         <div className="toast">
-          <div className="toast-icon">✓</div>
+          <div className="toast-icon">OK</div>
           <div className="toast-text">
             <strong>Copied to clipboard!</strong>
             <span>Email address copied successfully.</span>
@@ -73,3 +77,4 @@ function HeroContent() {
 }
 
 export default HeroContent
+
