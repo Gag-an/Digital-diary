@@ -138,7 +138,7 @@ export default function GuestbookPage({ onNavigate }) {
         )}
         {messages.map((msg) => (
           <article key={msg.id} className="guestbook-card-item">
-            <h3>{msg.text}</h3>
+            <p className="guestbook-message">{msg.text}</p>
             <div className="guestbook-meta">
               <strong>{msg.name}</strong>
               <span>{new Date(msg.createdAt).toLocaleDateString()}</span>
